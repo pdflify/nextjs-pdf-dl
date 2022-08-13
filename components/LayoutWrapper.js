@@ -6,17 +6,17 @@ const LayoutWrapper = ({ children }) => {
   return (
     <div>
       <NextNProgress
-         color="#ef4444"
-         startPosition={0.3}
-         stopDelayMs={200}
-         height={2}
-         showOnShallow={true}
+        color="#ef4444"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={2}
+        showOnShallow={true}
       />
-       <NavBar/> 
-        <SectionContainer>
+      <NavBar />
+      <SectionContainer>
         <main className="overflow-x-hidden">{children}</main>
-        </SectionContainer>
-        <Footer/>   
+      </SectionContainer>
+      <Footer />
     </div>
   )
 }
