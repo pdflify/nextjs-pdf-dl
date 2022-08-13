@@ -1,10 +1,10 @@
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import NavBar from './NavBar'
-import NextNProgress from "nextjs-progressbar";
+import NextNProgress from 'nextjs-progressbar'
 const LayoutWrapper = ({ children }) => {
   return (
-    <>
+    <div>
       <NextNProgress
          color="#ef4444"
          startPosition={0.3}
@@ -12,12 +12,12 @@ const LayoutWrapper = ({ children }) => {
          height={2}
          showOnShallow={true}
       />
-        <NavBar />   
+       <NavBar/> 
         <SectionContainer>
         <main className="overflow-x-hidden">{children}</main>
         </SectionContainer>
-        <Footer />    
-    </>
+        <Footer/>   
+    </div>
   )
 }
 

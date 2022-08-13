@@ -1,38 +1,35 @@
-import Link from "next/link";
+import Link from 'next/link'
 import SocialIcon from '@/components/social-icons'
 import siteMetadata from '@/data/siteMetadata'
-
-const footernav = [
-  { name: 'Privacy Policy', href: '/', current: false },
-  { name: 'Terms', href: '#', current: false },
-  { name: 'Contact', href: '/about', current: false },
-  { name: 'Advertisement', href: '#', target:'_blank', current: false },
-]
+import headerNavLinks from '@/data/headerNavLinks'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 dark:bg-gray-800 px-6">
-      <div className="flex items-center justify-center lg:justify-between text-center lg:text-left flex-wrap py-8 w-full max-w-screen-xl mx-auto">
-        <div className="w-full lg:w-1/2 mb-2 lg:mb-0">
-          <div className="w-full block lg:flex lg:items-center lg:w-auto">
+    <footer className="w-full bg-gray-100 px-6 dark:bg-gray-800 ">    
+      <div className="f mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-center py-8 text-center lg:justify-between lg:text-left">
+        <div className="mb-2 w-full lg:mb-0 lg:w-1/2">
+          <div className="block w-full lg:flex lg:w-auto lg:items-center">
             <div className="lg:grow">
-              <span className="text-gray-800 dark:text-gray-300 block lg:inline-block mb-2 lg:mb-0 lg:mr-8">
-              {`© ${new Date().getFullYear()}`} {"Stacktix.org"}
+              <span className="mb-2 block text-gray-800 dark:text-gray-300 lg:mb-0 lg:mr-8 lg:inline-block">
+              {`© ${new Date().getFullYear()}`} {'Stacktix.org'}
               </span>
-              {footernav.map((link) => (
-                <Link  
-                key={link.name} 
-                href={link.href}               
-                className="no-underline inline-block lg:mt-0 hover:text-gray-800 text-gray-900 dark:text-gray-300  mr-4"
-                target={link.target}
-                >                   
-                    {link.name}                
-                </Link>   
-              ))}
+              {headerNavLinks.map((link) => (
+            <div key={link.title} className="px-12 py-4">
+              <Link  
+              
+              href={link.href} 
+
+              className="text-2xl">
+
+                {link.title}
+                
+              </Link>
+            </div>
+          ))}
             </div>
           </div>
         </div>
-        <div className="flex justify-center lg:justify-end w-full lg:w-1/2">
+        <div className=" w-full justify-center lg:w-1/2 lg:justify-end">
          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
           <SocialIcon kind="github" href={siteMetadata.github} size="6" />
           <SocialIcon kind="facebook" href={siteMetadata.facebook} size="6" />
